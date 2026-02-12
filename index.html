@@ -355,7 +355,7 @@
                         <legend>Type of Support Requested</legend>
                         <div class="form-group">
                             <label for="supportType">Select category</label>
-                            <select id="supportType" name="supportType" required>
+                            <select id="supportType" name="supportType" required onchange="toggleOtherField()">
                                 <option value="">-- Select an option --</option>
                                 <option value="education">Educational scholarship</option>
                                 <option value="skill">Skill development</option>
@@ -364,6 +364,10 @@
                                 <option value="community">Community program or project</option>
                                 <option value="other">Other</option>
                             </select>
+                        </div>
+                        <div class="form-group hidden" id="other-support-field">
+                            <label for="otherSupportName">Please specify (e.g., scholarship name)</label>
+                            <input type="text" id="otherSupportName" name="otherSupportName" placeholder="e.g., Horse Class Scholarship, Teen Class">
                         </div>
                     </fieldset>
 
@@ -468,6 +472,22 @@
         });
 
         // Form Logic
+        // Toggle "Other" support type field
+        function toggleOtherField() {
+            const supportType = document.getElementById('supportType').value;
+            const otherField = document.getElementById('other-support-field');
+            const otherInput = document.getElementById('otherSupportName');
+            
+            if (supportType === 'other') {
+                otherField.classList.remove('hidden');
+                otherInput.setAttribute('required', '');
+            } else {
+                otherField.classList.add('hidden');
+                otherInput.removeAttribute('required');
+                otherInput.value = '';
+            }
+        }
+
         // Updated Form Logic
         function toggleBeneficiary(isSomeoneElse) {
             const fieldsContainer = document.getElementById('beneficiary-fields');
