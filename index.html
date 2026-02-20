@@ -295,7 +295,10 @@
                     <img src="images/tree-logo.png" alt="Tree logo" aria-hidden="true" class="form-icon-img">
                 </div>
 
-                <form action="scripts/send-mail.php" method="POST" class="grant-form">
+                <form action="https://api.web3forms.com/submit" method="POST" class="grant-form">
+                    <input type="hidden" name="access_key" value="ed6eb824-6c32-4a49-9ce2-33f91fb97f38">
+                    <input type="hidden" name="subject" value="New Grant Application — Henriksen Family Giving Fund">
+                    <input type="hidden" name="redirect" value="https://henriksenfamily.org/thank-you.html">
                     <!-- 1. Applicant Information -->
                     <fieldset>
                         <legend>Applicant Information</legend>
@@ -435,7 +438,10 @@
                 <div class="col-right contact-details animate-on-scroll">
                     <h3>Contact Us</h3>
                     <div class="simple-contact-form-wrapper">
-                        <form action="scripts/send-mail.php" method="POST" class="simple-form">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="simple-form">
+                            <input type="hidden" name="access_key" value="ed6eb824-6c32-4a49-9ce2-33f91fb97f38">
+                            <input type="hidden" name="subject" value="New Contact Inquiry — Henriksen Family Giving Fund">
+                            <input type="hidden" name="redirect" value="https://henriksenfamily.org/thank-you.html">
                             <input type="text" name="contactName" placeholder="Name" class="simple-input" required>
                             <input type="email" name="contactEmail" placeholder="Email" class="simple-input" required>
                             <textarea name="contactMessage" placeholder="Message" rows="3" class="simple-input"
